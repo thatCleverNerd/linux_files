@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Creates a snapshot of the system, then updates
+
+not_root="\n[!] Run as root \n"
+
+clear
+
+if [ "$EUID" != 0 ]
+	then echo -e "$not_root"
+	exit
+
+fi
+
+
+timeshift --create --comment "Backing-up before updating... (from script)"
+
+pacman -Syyu --noconfirm
+
