@@ -1,0 +1,14 @@
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+
+rofi -combi-modi drun,run -show combi -show-icons -lines 7
+
+xfce4-screenshooter
+
+Cycle windows: Super+Tab
+Close Win.: Super+W
+Hide Win.: Super+Q
+Move Win.: Super+A
+Resize Win: Super+R
+Workspace 1: super+1
+workspace 2: super+2
