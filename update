@@ -13,7 +13,20 @@ if [ "$EUID" != 0 ]
 fi
 
 
+border='================================================'
+
+
+echo -e "$border"
+echo -e "\t[+] Creating Backup..."
+echo -e "$border \n"
+
 timeshift --create --comment "Backing-up before updating... (from script)"
 
-pacman -Syyu --noconfirm
 
+
+echo -e "\n\n$border"
+echo -e "\t[*] Updating!"
+echo -e "$border \n"
+apt update && apt upgrade -y
+
+/bin/check_reboot
