@@ -47,7 +47,7 @@ fi
 
 
 
-count() {
+rename() {
 
 
 	let count=1
@@ -64,4 +64,4 @@ count() {
 
 }
 
-count
+rename
