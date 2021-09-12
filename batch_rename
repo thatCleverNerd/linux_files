@@ -1,22 +1,43 @@
 #!/bin/bash
 
 
+border="==========================================="
+
+
+
+# ============================================
+# Information about the script
+
 help(){
 
-	script_name="basename $0"
 
-	echo -e "Usuage:"
-	echo -e "./$(eval "$script_name")" 
+	script_name="./$(eval basename "$0")"
+
+	echo -e "\nRenames ALL files in the current directory."
+	echo -e "$border\n"
+
+	echo -e "$script_name [NEW_FILE_NAME] \n"
+	echo -e "[!] A number will be added at the end of the file name \n"
+	echo -e "Ex: $script_name my_file \n"
+	echo	"Result: my_file_1.txt"
+
+	echo -e "\n$border \n\n"
 
 }
+# =============================================
+
 
 
 #===============================
-# runs if there is no argument
-# and runs the help function
+# runs if there is no argument and
+# runs the help function
 
-if [ -z $1 ]
+
+new_title=$1
+
+if [ -z $new_title ]
 	then
+		clear
 		echo -e "\n[!] no argument was given \n"
 		help
 	exit
@@ -28,11 +49,6 @@ fi
 
 count() {
 
-	new_title=$1
-
-	####################
-	touch file.txt doc.pdf
-	####################
 
 	let count=1
 
@@ -48,4 +64,4 @@ count() {
 
 }
 
-#count
+count
