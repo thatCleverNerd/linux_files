@@ -46,7 +46,18 @@ if [ -z $new_name ]
 		help
 		exit
 
+
+	elif [ $new_name == "-h" ] || [ $new_name == "help" ]
+
+		then
+
+			clear
+
+			help
+			exit
 fi
+
+
 
 
 # Prints a message if the directory is empty
