@@ -37,18 +37,28 @@ new_title=$1
 
 if [ -z $new_title ]
 	then
+
 		clear
 		echo -e "\n[!] no argument was given \n"
 		help
+
 	exit
 fi
+
 
 #===========================
 
 
 
+
+# removes whitespace from all files in a directory
+rename 's/ //g' *
+
+
 rename() {
 
+	# Renames every file with a new file name
+	# While appending a number to the file name
 
 	let count=1
 
