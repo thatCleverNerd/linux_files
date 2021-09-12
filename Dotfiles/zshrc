@@ -1,0 +1,25 @@
+# Path to your oh-my-zsh installation.
+export ZSH="/home/richard/.oh-my-zsh"
+
+ZSH_THEME="bira"
+
+
+
+# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
+# Example format: plugins=(rails git textmate ruby lighthouse)
+plugins=(git zsh-autosuggestions)
+
+source $ZSH/oh-my-zsh.sh
+
+
+alias python='python3'
+alias youtube-dl='python3 $(which /usr/local/bin/youtube-dl)'
+alias yt='youtube-dl'
+alias ytmp3='youtube-dl --extract-audio --audio-format mp3'
+
+alias conf='vim ~/.zshrc'
+alias install='sudo apt install -y'
+alias search='apt search'
+alias backups='sudo timeshift-gtk'
+
+
