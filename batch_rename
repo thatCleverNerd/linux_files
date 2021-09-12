@@ -62,13 +62,14 @@ rename() {
 
 	let count=1
 
-	for file in $(ls $dir)
-	do
+	for file in $(ls $dir); do
 
-	mv $file ${new_title%%.*}_$count.${file##*.}
+	if [ ! -d "$file" ]; then
 
+		mv $file ${new_title%%.*}_$count.${file##*.}
+		let count=count+1
 
-	let count=count+1
+	fi
 
 	done
 
