@@ -33,17 +33,33 @@ help(){
 # runs the help function
 
 
-new_title=$1
+new_name=$1
 
-if [ -z $new_title ]
+# Checks for the first argument
+if [ -z $new_name ]
+
 	then
 
 		clear
 		echo -e "\n[!] no argument was given \n"
-		help
 
-	exit
+		help
+		exit
+
 fi
+
+
+# Prints a message if the directory is empty
+if [[ -z $(dir) ]]
+
+	then
+
+		echo -e "\n[!] This directory is empty...\n\n"
+		exit
+
+fi
+
+
 
 
 #===========================
@@ -66,7 +82,7 @@ rename() {
 
 	if [ ! -d "$file" ]; then
 
-		mv $file ${new_title%%.*}_$count.${file##*.}
+		mv $file ${new_name%%.*}_$count.${file##*.}
 		let count=count+1
 
 	fi
