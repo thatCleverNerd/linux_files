@@ -1,0 +1,51 @@
+#!/bin/bash
+
+
+help(){
+
+	script_name="basename $0"
+
+	echo -e "Usuage:"
+	echo -e "./$(eval "$script_name")" 
+
+}
+
+
+#===============================
+# runs if there is no argument
+# and runs the help function
+
+if [ -z $1 ]
+	then
+		echo -e "\n[!] no argument was given \n"
+		help
+	exit
+fi
+
+#===========================
+
+
+
+count() {
+
+	new_title=$1
+
+	####################
+	touch file.txt doc.pdf
+	####################
+
+	let count=1
+
+	for file in $(ls $dir)
+	do
+
+	mv $file ${new_title%%.*}_$count.${file##*.}
+
+
+	let count=count+1
+
+	done
+
+}
+
+#count
