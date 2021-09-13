@@ -1,8 +1,8 @@
 #!/bin/bash
 
 
-border="==========================================="
-
+border="================================================="
+thin_border="------------------------------------------------"
 
 
 # ============================================
@@ -16,12 +16,12 @@ help(){
 	echo -e "\nRenames ALL files in the current directory."
 	echo -e "$border\n"
 
-	echo -e "$script_name [NEW_FILE_NAME] \n"
-	echo -e "[!] A number will be added at the end of the file name \n"
-	echo -e "Ex: $script_name my_file \n"
-	echo	"Result: my_file_1.txt"
+	echo -e " Usage: $script_name [new_name] \n"
+	echo -e " Example: $script_name my_file | Result: my_file_1.txt"
 
-	echo -e "\n$border \n\n"
+	echo -e "\n$thin_border\n"
+	echo -e " Options: \n"
+	echo -e " -n: Shows you the output without altering file names \n\n"
 
 }
 # =============================================
@@ -91,15 +91,53 @@ rename() {
 
 	for file in $(ls $dir); do
 
-	if [ ! -d "$file" ]; then
+		if [ ! -d "$file" ]; then
 
-		mv $file ${new_name%%.*}_$count.${file##*.}
-		let count=count+1
+			mv $file ${new_name%%.*}_$count.${file##*.}
+			let count=count+1
 
-	fi
+		fi
 
 	done
 
 }
 
-rename
+
+
+# ================================================
+
+# new variable for no_run function
+other_name=$2
+
+
+# Allows the user to run a test to see
+# what the output will look like
+# without altering the file names
+
+no_run() {
+
+	let count=1
+
+	for file in $(ls $dir); do
+
+		if [ ! -d $file ]; then
+
+			echo -e "$file \t${other_name%%.*}_$count.${file##*.}"
+			let count=count+1
+
+		fi
+
+	done
+
+}
+
+# checks if the -n option is used
+if [ $1 == "-n" ]; then
+
+	no_run
+
+else
+
+	rename
+
+fi
