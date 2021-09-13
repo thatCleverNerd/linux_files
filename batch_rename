@@ -118,16 +118,20 @@ test_run() {
 
 	let count=1
 
+	echo ""
+
 	for file in $(ls $dir); do
 
 		if [ ! -d $file ]; then
-
-			echo -e "$file \t${other_name%%.*}_$count.${file##*.}"
+			echo -e "$file > ${other_name%%.*}_$count.${file##*.}"
+			echo -e "$thin_border"
 			let count=count+1
 
 		fi
 
 	done
+
+	echo -e "\n"
 
 }
 
