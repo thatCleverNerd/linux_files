@@ -106,7 +106,7 @@ rename() {
 
 # ================================================
 
-# new variable for no_run function
+# new variable for test_run function
 other_name=$2
 
 
@@ -114,7 +114,7 @@ other_name=$2
 # what the output will look like
 # without altering the file names
 
-no_run() {
+test_run() {
 
 	let count=1
 
@@ -134,7 +134,7 @@ no_run() {
 # checks if the -n option is used
 if [ $1 == "-n" ]; then
 
-	no_run
+	test_run
 
 else
 
