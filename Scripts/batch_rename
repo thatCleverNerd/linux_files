@@ -13,7 +13,6 @@ help(){
 
 	script_name="./$(eval basename "$0")"
 
-	echo -e "\nRenames ALL files in the current directory."
 	echo -e "$border\n"
 
 	echo -e " Usage: $script_name [new_name] \n"
@@ -29,44 +28,31 @@ help(){
 
 
 #===============================
-# runs if there is no argument and
+# if statement runs if there is no argument and
 # runs the help function
 
 
 new_name=$1
 
 # Checks for the first argument
-if [ -z $new_name ]
+if [ -z $new_name ]; then
 
-	then
+	clear
+	echo -e "\n[!] no argument was given \n"
 
-		clear
-		echo -e "\n[!] no argument was given \n"
+	help
+	exit
 
-		help
-		exit
-
-
-	elif [ $new_name == "-h" ] || [ $new_name == "help" ]
-
-		then
-
-			clear
-
-			help
-			exit
 fi
 
 
 
 
 # Prints a message if the directory is empty
-if [[ -z $(dir) ]]
+if [[ -z $(dir) ]]; then
 
-	then
-
-		echo -e "\n[!] This directory is empty...\n\n"
-		exit
+	echo -e "\n[!] This directory is empty...\n\n"
+	exit
 
 fi
 
@@ -78,7 +64,7 @@ fi
 
 
 
-# removes whitespace from all files in a directory
+# removes whitespace from all files in current directory
 rename 's/ //g' *
 
 
@@ -133,15 +119,40 @@ test_run() {
 
 	echo -e "\n"
 
+
 }
 
-# checks if the -n option is used
-if [ $1 == "-n" ]; then
 
-	test_run
 
-else
 
-	rename
 
-fi
+# List of arguments
+optstring=":hn:"
+
+while getopts ${optstring} arg; do
+	case ${arg} in
+		h)
+			clear
+			help
+			;;
+		n)
+			test_run
+			exit
+			;;
+		:)
+			echo -e "\n[!] Error: -${OPTARG} requires an argument.\n\n"
+			exit
+			;;
+		?)
+			clear
+			echo -e "\n[!] Invalid option: -${OPTARG}\n"
+			help
+			exit
+			;;
+	esac
+
+done
+
+
+# Runs the rename function
+rename
