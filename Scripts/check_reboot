@@ -1,0 +1,17 @@
+#!/bin/bash
+
+
+border="====================================="
+
+if [ -f /var/run/reboot-required ]; then
+	echo -e "\n\n$border"
+	echo -e "\n [!] Reboot Required \n";
+	echo -e "$border\n\n"
+
+
+else
+	echo -e "\n\n$border"
+	echo -e "\n [<3] No Reboot Required \n";
+	echo -e "$border\n\n"
+
+fi
