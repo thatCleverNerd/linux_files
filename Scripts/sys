@@ -1,0 +1,80 @@
+#!/bin/bash
+
+border="========================================="
+thin_border="------------------------------------------------"
+
+
+script_name="$(eval basename '$0')"
+
+if [ -z $1 ]; then
+	clear
+
+	echo -e "\n [!] $script_name needs an option \n"
+	echo -e "$thin_border \n
+-u : Update system
+-b : Creates a backup
+-e : Encrypts file \n\n"
+
+	exit
+
+fi
+
+check_root() {
+
+	if [ "$EUID" != 0 ]; then
+		echo -e "\n [!] Run as root \n\n"
+		exit
+	fi
+
+}
+
+backup() {
+
+	echo "$border"
+	echo -e "\t Making Backup..."
+	echo -e "$border \n\n"
+
+	timeshift --create --comment "Backup from $script_name"
+}
+
+
+
+update() {
+
+	echo -e "\n\n$border"
+	echo -e "\t Updating..."
+	echo -e "$border \n\n"
+
+	apt update
+	apt upgrade -y
+	/bin/check_reboot
+}
+
+
+
+optstring=":bue:"
+
+while getopts ${optstring} option; do
+	case ${option} in
+		b)
+			check_root
+			backup
+			;;
+		u)
+			check_root
+			update
+			;;
+		e)
+			gpg -c $2
+			;;
+		:)
+			echo -e "\n [!] Error: -${OPTARG} requires an argument \n\n"
+			exit
+			;;
+		?)
+			echo -e "\n [!] Invalid option: - ${OPTARG} \n\n"
+			;;
+
+	esac
+
+done
