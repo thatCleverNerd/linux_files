@@ -126,7 +126,6 @@ test_run() {
 
 
 
-# List of arguments
 optstring=":hn:"
 
 while getopts ${optstring} arg; do
@@ -154,5 +153,4 @@ while getopts ${optstring} arg; do
 done
 
 
-# Runs the rename function
 rename
