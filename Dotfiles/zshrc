@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/home/richard/.oh-my-zsh"
 
-ZSH_THEME="bira"
+ZSH_THEME="takashiyoshida"
 
 
 
@@ -21,5 +21,11 @@ alias conf='vim ~/.zshrc'
 alias install='sudo apt install -y'
 alias search='apt search'
 alias backups='sudo timeshift-gtk'
+alias gs='git status'
+alias gc='git commit'
+alias gp='git push'
+alias ga='git add'
+alias gr='git rm'
 
+alias ip="echo -e '\n'; ip a | grep /24 | awk '{print $2}'; echo -e '\n'"
 
