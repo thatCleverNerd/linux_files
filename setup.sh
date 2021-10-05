@@ -18,4 +18,4 @@ echo "$border"
 echo 'INSTALLING APPLICATIONS'
 echo "$border"
 
-sudo apt install git vim pdfsam atril python3 -y
+sudo apt install git vim pdfsam atril python3 speedtest-cli -y
