@@ -11,7 +11,7 @@ thin_border="------------------------------------------------"
 help(){
 
 
-	script_name="./$(eval basename "$0")"
+	script_name="./$(eval basename '$0')"
 
 	echo -e "$border\n"
 
