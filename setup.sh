@@ -14,7 +14,7 @@ fi
 
 
 echo "$border"
-echo 'UPDATING'
+echo -e "\t UPGRADING SYSTEM"
 echo "$border"
 
 sudo apt update && sudo apt upgrade -y
@@ -25,10 +25,23 @@ echo -e "$thin_border"
 
 
 echo "$border"
-echo 'INSTALLING APPLICATIONS'
+echo -e "\t INSTALLING APPLICATIONS"
 echo "$border"
 
-sudo apt install git timeshift vim pdfsam atril python3 speedtest-cli -y
+sudo apt install git timeshift vim pdfsam atril python3 speedtest-cli zsh  -y
 
 
+
+echo "$border"
+echo -e "\t CREATING BACKUP"
+echo "$border"
 sudo timeshift --create --comment "Creating initial backup from setup script"
+
+
+###############
+# Prompt user to press enter, then setup oh-my-zsh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/plugins/zsh-autosuggestions
+
+# Sync dotfiles/my scripts
+##############

@@ -8,20 +8,14 @@
 
 clear
 
-border='+++++++++++++++++++++++++++++'
+border='+++++++++++++++++++++++++++++++++++++'
 
 echo -e "$border"
-echo "Python Server"
+echo -e "\t Python Server"
 echo -e "$border \n"
 
 
-my_ip="ip a | grep /24 | awk '{print $2}'"
-
-
-echo -e "IP: "
-eval $my_ip | awk '{print $2}'
-echo -e "\n\n"
-
+echo -e "[*] IP: $(ip a | grep /24 | awk '{print $2}') \n\n"
 
 
 python -m http.server
