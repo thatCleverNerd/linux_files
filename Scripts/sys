@@ -11,6 +11,7 @@ if [ -z $1 ]; then
 
 	echo -e "\n [!] $script_name needs an option \n"
 	echo -e "$thin_border \n
+ -a : Creates a backup and update
  -u : Update system
  -b : Creates a backup
  -e : Encrypts file
@@ -53,16 +54,24 @@ update() {
 
 
 
-optstring=":dbue:"
+optstring="d:abue:"
 
 while getopts ${optstring} option; do
 	case ${option} in
+		a)
+			check_root
+			clear
+			backup
+			update
+			;;
 		b)
 			check_root
+			clear
 			backup
 			;;
 		u)
 			check_root
+			clear
 			update
 			;;
 		e)
