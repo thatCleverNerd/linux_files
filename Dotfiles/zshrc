@@ -17,15 +17,21 @@ alias youtube-dl='python3 $(which /usr/local/bin/youtube-dl)'
 alias yt='youtube-dl'
 alias ytmp3='youtube-dl --extract-audio --audio-format mp3'
 
+alias ghost='/usr/bin/gs'
 alias conf='vim ~/.zshrc'
 alias install='sudo apt install -y'
 alias search='apt search'
 alias backups='sudo timeshift-gtk'
+
 alias gs='git status'
 alias gc='git commit'
 alias gp='git push'
 alias ga='git add'
 alias gr='git rm'
+alias gd='git diff'
+alias gl='git log'
+alias netstat='sudo netstat'
 
-alias ip="echo -e '\n'; ip a | grep /24 | awk '{print $2}'; echo -e '\n'"
 
+
+alias ip="echo ''; echo "$(ip a | grep /24 | awk '{print $2}')"; echo ''"
