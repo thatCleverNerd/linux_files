@@ -4,16 +4,17 @@ border="========================================="
 thin_border="------------------------------------------------"
 
 
-script_name="$(eval basename '$0')"
+script_name="$(eval basename $0)"
 
 if [ -z $1 ]; then
 	clear
 
 	echo -e "\n [!] $script_name needs an option \n"
 	echo -e "$thin_border \n
--u : Update system
--b : Creates a backup
--e : Encrypts file \n\n"
+ -u : Update system
+ -b : Creates a backup
+ -e : Encrypts file
+ -d : Decrypt file \n\n"
 
 	exit
 
@@ -52,7 +53,7 @@ update() {
 
 
 
-optstring=":bue:"
+optstring=":dbue:"
 
 while getopts ${optstring} option; do
 	case ${option} in
@@ -66,6 +67,9 @@ while getopts ${optstring} option; do
 			;;
 		e)
 			gpg -c $2
+			;;
+		d)
+			gpg $2
 			;;
 		:)
 			echo -e "\n [!] Error: -${OPTARG} requires an argument \n\n"
