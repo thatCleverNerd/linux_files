@@ -28,7 +28,7 @@ echo "$border"
 echo -e "\t INSTALLING APPLICATIONS"
 echo "$border"
 
-sudo apt install git timeshift vim pdfsam atril python3 speedtest-cli zsh xclip  -y
+sudo apt install git timeshift vim pdfsam atril python3 speedtest-cli zsh -y
 
 
 
