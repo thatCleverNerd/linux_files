@@ -34,4 +34,4 @@ alias netstat='sudo netstat'
 
 
 
-alias ip="echo ''; echo "$(ip a | grep /24 | awk '{print $2}')"; echo ''"
+alias ip="echo ''; echo "$(ip a | grep 192 | awk '{print $2}')"; echo ''"
