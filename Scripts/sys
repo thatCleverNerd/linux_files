@@ -54,7 +54,7 @@ update() {
 
 
 
-optstring="d:abue:"
+optstring=":d:abue:"
 
 while getopts ${optstring} option; do
 	case ${option} in

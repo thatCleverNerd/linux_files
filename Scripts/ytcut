@@ -1,0 +1,75 @@
+#!/bin/bash
+
+border="================================================="
+thin_border="------------------------------------------------"
+
+
+# ============================================
+# Information about the script
+
+
+
+help() {
+
+	script_name="$(eval basename $0)"
+	echo -e "$border"
+
+	echo -e "\n Usage: ./$script_name [OPTION] \n
+ -i: Youtube URL
+ -s: Start of video clip (00:00:00)
+ -e: End of clip
+
+$thin_border
+
+ OPTIONAL: \n
+ -o: Output name \n\n"
+	
+
+
+
+
+
+}
+# =============================================
+
+
+
+if [ -z $1 ]; then
+	clear
+
+	echo -e "\n [!] Error: no options were given"
+	help
+	exit
+
+fi
+
+
+
+
+
+
+
+optstring=":i:o"
+
+while getopts ${optstring} option; do
+	case ${option} in
+		i)
+			echo "working"
+			;;
+		o)
+			echo "my output name: $2"
+			;;
+		:)
+			echo -e "\n [!] Error: -${OPTARG} requires an argument \n\n"
+			exit
+			;;
+		?)
+			echo -e "\n[!] Invalid option: -${OPTARG} \n"
+			exit
+			;;
+	esac
+
+done
+
+
+
