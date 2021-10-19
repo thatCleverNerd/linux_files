@@ -8,15 +8,16 @@ thin_border="------------------------------------------------"
 # Information about the script
 
 
+script_name="$(eval basename $0)"
+
 
 help() {
 
-	script_name="$(eval basename $0)"
 	echo -e "$border"
 
-	echo -e "\n Usage: ./$script_name [OPTION] \n
+	echo -e "\n Usage: $script_name -i [URL] -s [Start_of_clip] -e [End_of_clip] \n
  -i: Youtube URL
- -s: Start of video clip (00:00:00)
+ -s: Start of video clip (07:10)
  -e: End of clip
 
 $thin_border
@@ -35,6 +36,7 @@ $thin_border
 
 
 if [ -z $1 ]; then
+
 	clear
 
 	echo -e "\n [!] Error: no options were given"
@@ -46,18 +48,21 @@ fi
 
 
 
-
-
-
-optstring=":i:o"
+optstring=":i:o:s:e:"
 
 while getopts ${optstring} option; do
 	case ${option} in
 		i)
-			echo "working"
+			url="${OPTARG}"
+			;;
+		s)
+			start_of_clip="${OPTARG}"
+			;;
+		e)
+			end_of_clip="${OPTARG}"
 			;;
 		o)
-			echo "my output name: $2"
+			vid_name="${OPTARG}"
 			;;
 		:)
 			echo -e "\n [!] Error: -${OPTARG} requires an argument \n\n"
@@ -72,4 +77,24 @@ while getopts ${optstring} option; do
 done
 
 
+
+
+if [[ -z $2 || -z $4 || -z $6 ]]; then
+
+	clear
+	echo -e "\n [!] Error: $script_name needs 3 options: -i, -s, -e"
+
+	help
+	exit
+
+
+elif [ -z $vid_name ]; then
+
+	ffmpeg -ss $start_of_clip -to $end_of_clip -i "$(youtube-dl -f best -g $url)" output.mp4
+
+else
+
+	ffmpeg -ss $start_of_clip -to $end_of_clip -i "$(youtube-dl -f best -g $url)" $vid_name
+
+fi
 
