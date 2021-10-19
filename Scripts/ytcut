@@ -79,7 +79,7 @@ done
 
 
 
-if [[ -z $2 || -z $4 || -z $6 ]]; then
+if [[ -z $url || -z $start_of_clip || -z $end_of_clip ]]; then
 
 	clear
 	echo -e "\n [!] Error: $script_name needs 3 options: -i, -s, -e"
