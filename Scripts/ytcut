@@ -24,10 +24,6 @@ $thin_border
 
  OPTIONAL: \n
  -o: Output name \n\n"
-	
-
-
-
 
 
 }
@@ -44,7 +40,6 @@ if [ -z $1 ]; then
 	exit
 
 fi
-
 
 
 
