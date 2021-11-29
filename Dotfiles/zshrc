@@ -36,5 +36,5 @@ alias netstat='sudo netstat'
 
 alias ip="echo ''; echo "$(ip a | grep 192 | awk '{print $2}')"; echo ''"
 
-cat ~/.art.txt
+cat ~/.ascii_art.txt
 echo -e "\n\n"
