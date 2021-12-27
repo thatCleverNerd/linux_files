@@ -32,12 +32,11 @@ check_root() {
 
 backup() {
 	read -p "[*] Backup Comment: " comment
-	echo "$border"
+	echo -e "\n\n$border"
 	echo -e "\t Making Backup..."
 	echo -e "$border \n\n"
 
-	timeshift --create --comment "$comment"
-	echo -e "\n\n"
+	sudo timeshift --create --comment "$comment"
 }
 
 
@@ -48,8 +47,7 @@ update() {
 	echo -e "\t Updating..."
 	echo -e "$border \n\n"
 
-	apt update
-	apt upgrade -y
+	sudo apt update && sudo apt upgrade -y
 	/bin/check_reboot
 }
 
@@ -66,12 +64,10 @@ while getopts ${optstring} option; do
 			update
 			;;
 		b)
-			check_root
 			clear
 			backup
 			;;
 		u)
-			check_root
 			clear
 			update
 			;;
