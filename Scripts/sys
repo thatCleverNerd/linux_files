@@ -11,10 +11,10 @@ if [ -z $1 ]; then
 
 	echo -e "\n [!] $script_name needs an option \n"
 	echo -e "$thin_border \n
- -a : Creates a backup and update
+ -a : Creates a backup and checks for updates
  -u : Update system
  -b : Creates a backup
- -e : Encrypts file
+ -e : Encrypt file
  -d : Decrypt file \n\n"
 
 	exit
@@ -31,12 +31,13 @@ check_root() {
 }
 
 backup() {
-
+	read -p "[*] Backup Comment: " comment
 	echo "$border"
 	echo -e "\t Making Backup..."
 	echo -e "$border \n\n"
 
-	timeshift --create --comment "Backup from $script_name"
+	timeshift --create --comment "$comment"
+	echo -e "\n\n"
 }
 
 
