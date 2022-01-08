@@ -31,12 +31,12 @@ check_root() {
 }
 
 backup() {
-	read -p "[*] Backup Comment: " comment
+
 	echo -e "\n\n$border"
 	echo -e "\t Making Backup..."
 	echo -e "$border \n\n"
-
 	sudo timeshift --create --comment "$comment"
+
 }
 
 
@@ -60,11 +60,14 @@ while getopts ${optstring} option; do
 		a)
 			check_root
 			clear
+			comment="Backup From Sys"
 			backup
 			update
 			;;
 		b)
 			clear
+			read -p "[*] Backup Comment: " comment
+			echo ""
 			backup
 			;;
 		u)
