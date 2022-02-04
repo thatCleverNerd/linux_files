@@ -81,7 +81,8 @@ while getopts ${optstring} option; do
 			gpg $2
 			;;
 		:)
-			echo -e "\n [!] Error: -${OPTARG} requires an argument \n\n"
+			echo -e "\n [!] Error: -${OPTARG} requires an argument \n"
+			echo -e " Ex: $script_name -${OPTARG} [File] \n\n"
 			exit
 			;;
 		?)
