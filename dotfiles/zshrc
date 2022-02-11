@@ -31,8 +31,8 @@ alias gr='git rm'
 alias gd='git diff'
 alias gl='git log'
 alias netstat='sudo netstat'
-alias tools='sel=$(ls ~/linux_files/scripts | fzf); vim ~/linux_files/scripts/$sel'
-
+alias tools='sel=$(ls ~/linux_files/scripts | fzf) && vim ~/linux_files/scripts/$sel'
+alias 2up='sudo apt update && apt list --upgradable'
 
 cat ~/.ascii_art.txt
 echo -e "\n\n"

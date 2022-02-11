@@ -60,7 +60,7 @@ while getopts ${optstring} option; do
 		a)
 			check_root
 			clear
-			comment="Backup From Sys"
+			comment="Backup and Update"
 			backup
 			update
 			;;
