@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh installation.
-export ZSH="/home/richard/.oh-my-zsh"
+export ZSH="/home/$USER/.oh-my-zsh"
 
-ZSH_THEME="takashiyoshida"
+ZSH_THEME="xiong-chiamiov-plus"
 
 
 
@@ -13,11 +13,10 @@ source $ZSH/oh-my-zsh.sh
 
 
 alias python='python3'
-alias youtube-dl='python3 $(which /usr/local/bin/youtube-dl)'
+alias youtube-dl='python3 $(which /usr/bin/youtube-dl)'
 alias yt='youtube-dl'
 alias ytmp3='youtube-dl --extract-audio --audio-format mp3'
 
-alias ghost='/usr/bin/gs'
 alias conf='vim ~/.zshrc'
 alias install='sudo apt install -y'
 alias search='apt search'
@@ -34,7 +33,6 @@ alias netstat='sudo netstat'
 alias tools='sel=$(ls ~/linux_files/scripts | fzf) && vim ~/linux_files/scripts/$sel'
 alias 2up='sudo apt update && apt list --upgradable'
 
-wal -R -q
-cat ~/.ascii_art.txt
-echo -e "\n\n"
+#cat ~/.ascii_art.txt
+#echo -e "\n\n"
 

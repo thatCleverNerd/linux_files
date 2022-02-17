@@ -30,22 +30,13 @@ echo "$border"
 
 sudo apt install git timeshift vim feh fzf youtube-dl curl htop pdfsam atril python3 speedtest-cli zsh -y
 
-python3 -m pip install --upgrade pip
-
 
 echo "$border"
 echo -e "\t SETTING UP SYMLINKS"
 echo "$border"
 
 ln -s ~/linux_files/dotfiles/vimrc ~/.vimrc && echo -e "\n[+] vimrc symlnk created"
-ln -s ~/linux_files/scripts/* /bin && echo -e "[+] All script symlnks created \n\n"
-
-
-echo "$border"
-echo -e "\t CREATING BACKUP"
-echo "$border"
-sudo timeshift --create --comment "Creating initial backup from setup script"
-echo -e "\n\n"
+sudo ln -s ~/linux_files/scripts/* /bin && echo -e "[+] All script symlnks created \n\n"
 
 
 echo "$border"
@@ -57,8 +48,8 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 read -p $'\x0a [*] Press enter to finish setup: '
 echo ""
 
-git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/plugins/zsh-autosuggestions
 ln -s ~/linux_files/dotfiles/zshrc ~/.zshrc
+git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/plugins/zsh-autosuggestions
 
 echo -e "\n Done! \n\n"
 
