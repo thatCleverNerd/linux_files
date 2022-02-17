@@ -28,20 +28,39 @@ echo "$border"
 echo -e "\t INSTALLING APPLICATIONS"
 echo "$border"
 
-sudo apt install git timeshift vim feh fzf pdfsam atril python3 speedtest-cli zsh -y
+sudo apt install git timeshift vim feh fzf youtube-dl curl htop pdfsam atril python3 speedtest-cli zsh -y
 
+python3 -m pip install --upgrade pip
+
+
+echo "$border"
+echo -e "\t SETTING UP SYMLINKS"
+echo "$border"
+
+ln -s ~/linux_files/dotfiles/vimrc ~/.vimrc && echo -e "\n[+] vimrc symlnk created"
+ln -s ~/linux_files/scripts/* /bin && echo -e "[+] All script symlnks created \n\n"
 
 
 echo "$border"
 echo -e "\t CREATING BACKUP"
 echo "$border"
 sudo timeshift --create --comment "Creating initial backup from setup script"
+echo -e "\n\n"
 
 
-###############
-# Prompt user to press enter, then setup oh-my-zsh
+echo "$border"
+echo -e "\t SETTING UP ZSH"
+echo "$border"
+
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/plugins/zsh-autosuggestions
 
-# Sync dotfiles/my scripts
-##############
+read -p $'\x0a [*] Press enter to finish setup: '
+echo ""
+
+git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/plugins/zsh-autosuggestions
+ln -s ~/linux_files/dotfiles/zshrc ~/.zshrc
+
+echo -e "\n Done! \n\n"
+
+
+exit
