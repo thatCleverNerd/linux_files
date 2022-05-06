@@ -7,11 +7,12 @@ thin_border="------------------------------------------------"
 
 if [ "$EUID" != 0 ]; then
 
-	echo -e "\n [!] Run script as root"
+	echo -e "\n [!] Run script as root \n\n"
 	exit
 
 fi
 
+clear
 
 echo "$border"
 echo -e "\t UPGRADING SYSTEM"

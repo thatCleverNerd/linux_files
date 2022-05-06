@@ -11,9 +11,9 @@ if [ -z $1 ]; then
 
 	echo -e "\n [!] $script_name needs an option \n"
 	echo -e "$thin_border \n
- -a : Creates a backup and checks for updates
+ -a : Creates a system snapshot and checks for updates
  -u : Update system
- -b : Creates a backup
+ -b : Creates a snapshot
  -e : Encrypt file
  -d : Decrypt file \n\n"
 
@@ -33,7 +33,7 @@ check_root() {
 backup() {
 
 	echo -e "\n\n$border"
-	echo -e "\t Making Backup..."
+	echo -e "\t Creating Snapshot..."
 	echo -e "$border \n\n"
 	sudo timeshift --create --comment "$comment"
 
@@ -60,13 +60,13 @@ while getopts ${optstring} option; do
 		a)
 			check_root
 			clear
-			comment="Backup and Update"
+			comment="Snapshot and Update"
 			backup
 			update
 			;;
 		b)
 			clear
-			read -p "[*] Backup Comment: " comment
+			read -p "[*] Snapshot Comment: " comment
 			echo ""
 			backup
 			;;

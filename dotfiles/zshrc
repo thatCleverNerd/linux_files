@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/home/$USER/.oh-my-zsh"
 
-ZSH_THEME="xiong-chiamiov-plus"
+ZSH_THEME="edvardm"
 
 
 
@@ -13,7 +13,6 @@ source $ZSH/oh-my-zsh.sh
 
 
 alias python='python3'
-alias youtube-dl='python3 $(which /usr/bin/youtube-dl)'
 alias yt='youtube-dl'
 alias ytmp3='youtube-dl --extract-audio --audio-format mp3'
 
@@ -32,7 +31,10 @@ alias gl='git log'
 alias netstat='sudo netstat'
 alias tools='sel=$(ls ~/linux_files/scripts | fzf) && vim ~/linux_files/scripts/$sel'
 alias 2up='sudo apt update && apt list --upgradable'
+alias music='mpv --no-video'
 
-#cat ~/.ascii_art.txt
-#echo -e "\n\n"
+
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+        source /etc/profile.d/vte-2.91.sh
+fi
 
