@@ -15,7 +15,7 @@ echo -e "\t Python Server"
 echo -e "$border \n"
 
 
-echo -e "[*] IP: $(ip a | grep 192 | awk '{print $2}') \n\n"
+echo -e "[*] IP: $(ip a | grep 168.50 | awk '{print $2}') \n\n"
 
 
 python3 -m http.server

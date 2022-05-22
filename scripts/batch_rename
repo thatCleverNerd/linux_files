@@ -19,7 +19,7 @@ help(){
 	echo -e " Example: $script_name my_file | Result: my_file_1.txt"
 
 	echo -e "\n$thin_border\n"
-	echo -e " Options: \n"
+	echo -e " Optional: \n"
 	echo -e " -n: Shows you the output without altering file names \n\n"
 
 }

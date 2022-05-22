@@ -16,8 +16,10 @@ help() {
 	echo -e "$border"
 
 	echo -e "\n Usage: $script_name -i [URL] -s [Start_of_clip] -e [End_of_clip] \n
+\n Ex: ytcut -i https://www.youtube.com/watch?v=dQw4w9WgXcQ -s 00:12 -e 00:32 -o test.mp4
+ 
  -i: Youtube URL
- -s: Start of video clip (07:10)
+ -s: Start of video clip
  -e: End of clip
 
 $thin_border
