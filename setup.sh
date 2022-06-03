@@ -5,12 +5,12 @@ border='================================'
 thin_border="------------------------------------------------"
 
 
-if [ "$EUID" != 0 ]; then
+#if [ "$EUID" != 0 ]; then
 
-	echo -e "\n [!] Run script as root \n\n"
-	exit
+#	echo -e "\n [!] Run script as root \n\n"
+#	exit
 
-fi
+#fi
 
 clear
 
@@ -37,8 +37,7 @@ echo -e "\t SETTING UP SYMLINKS"
 echo "$border"
 
 ln -s ~/linux_files/dotfiles/vimrc ~/.vimrc && echo -e "\n[+] vimrc symlnk created"
-sudo ln -s ~/linux_files/scripts/* /bin && echo -e "[+] All script symlnks created \n\n"
-
+sudo ln -s ~/linux_files/scripts/* /bin && echo -e "\n[+] All script symlnks created \n\n"
 
 echo "$border"
 echo -e "\t SETTING UP ZSH"
@@ -52,7 +51,7 @@ echo ""
 ln -s ~/linux_files/dotfiles/zshrc ~/.zshrc
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/plugins/zsh-autosuggestions
 
-echo -e "\n Done! \n\n"
+echo -e "\n Done :) (Dont't forget to reboot!) \n\n"
 
 
 exit
