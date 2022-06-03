@@ -32,7 +32,9 @@ alias netstat='sudo netstat'
 alias tools='sel=$(ls ~/linux_files/scripts | fzf) && vim ~/linux_files/scripts/$sel'
 alias 2up='sudo apt update && apt list --upgradable'
 alias music='mpv --no-video'
-
+alias fs='flatpak search'
+alias fii='flatpak install -y'
+alias fr='flatpak remove -y'
 
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
         source /etc/profile.d/vte-2.91.sh
