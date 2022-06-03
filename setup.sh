@@ -45,11 +45,14 @@ echo "$border"
 
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-read -p $'\x0a [*] Press enter to finish setup: '
-echo ""
+#read -p $'\x0a [*] Press enter to finish setup: '
 
-ln -s ~/linux_files/dotfiles/zshrc ~/.zshrc
-git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/plugins/zsh-autosuggestions
+# Deletes default zshrc file thats created
+rm ~/.zshrc
+
+ln -s ~/linux_files/dotfiles/zshrc ~/.zshrc && echo -e "\n[+] zshrc symlink created \n\n"
+
+echo -e "[*] downloading zsh plugins \n\n" && git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/plugins/zsh-autosuggestions && echo -e "\n[+] Plugins have been setup"
 
 echo -e "\n Done :) (Dont't forget to reboot!) \n\n"
 
