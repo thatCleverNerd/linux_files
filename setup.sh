@@ -22,7 +22,7 @@ echo "$border"
 echo -e "\t INSTALLING APPLICATIONS"
 echo "$border"
 
-sudo apt install git timeshift vim feh fzf youtube-dl curl htop pdfsam atril python3 speedtest-cli zsh -y
+sudo apt install git timeshift vim feh fzf youtube-dl curl htop pdfsam atril python3 speedtest-cli zsh com.github.phase1geo.annotator -y
 
 
 echo "$border"

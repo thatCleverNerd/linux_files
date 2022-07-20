@@ -58,8 +58,8 @@ optstring=":d:abue:"
 while getopts ${optstring} option; do
 	case ${option} in
 		a)
-			check_root
 			clear
+			check_root
 			comment="Snapshot and Update"
 			backup
 			update
