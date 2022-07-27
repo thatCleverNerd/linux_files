@@ -11,7 +11,7 @@ if [ -f /var/run/reboot-required ]; then
 
 else
 	echo -e "\n\n$border"
-	echo -e "\n [<3] No Reboot Required \n"
+	echo -e "\n <3 No Reboot Required \n"
 	echo -e "$border\n\n"
 
 fi
