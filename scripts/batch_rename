@@ -79,7 +79,7 @@ rename() {
 
 		if [ ! -d "$file" ]; then
 
-			mv $file ${new_name%%.*}_$count.${file##*.}
+			mv $file ${new_name%%.*}-0$count.${file##*.}
 			let count=count+1
 
 		fi
@@ -109,7 +109,7 @@ test_run() {
 	for file in $(ls $dir); do
 
 		if [ ! -d $file ]; then
-			echo -e "$file > ${other_name%%.*}_$count.${file##*.}"
+			echo -e "$file > ${other_name%%.*}-0$count.${file##*.}"
 			echo -e "$thin_border"
 			let count=count+1
 
