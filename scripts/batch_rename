@@ -5,18 +5,17 @@ border="================================================="
 thin_border="------------------------------------------------"
 
 
-# ============================================
-# Information about the script
+
 
 help(){
-
 
 	script_name="./$(eval basename '$0')"
 
 	echo -e "$border\n"
 
 	echo -e " Usage: $script_name [new_name] \n"
-	echo -e " Example: $script_name my_file | Result: my_file_1.txt"
+	echo -e " Example: $script_name my file \n" 
+	echo -e " Result: my-file-01.txt"
 
 	echo -e "\n$thin_border\n"
 	echo -e " Optional: \n"
@@ -26,23 +25,15 @@ help(){
 # =============================================
 
 
-
-#===============================
-# if statement runs if there is no argument and
-# runs the help function
-
-
 new_name=$1
 
 # Checks for the first argument
 if [ -z $new_name ]; then
-
 	clear
 	echo -e "\n[!] no argument was given \n"
 
 	help
 	exit
-
 fi
 
 
@@ -50,18 +41,12 @@ fi
 
 # Prints a message if the directory is empty
 if [[ -z $(dir) ]]; then
-
 	echo -e "\n[!] This directory is empty...\n\n"
 	exit
-
 fi
 
 
-
-
-#===========================
-
-
+#===================================================
 
 
 # removes whitespace from all files in current directory
@@ -78,19 +63,17 @@ rename() {
 	for file in $(ls $dir); do
 
 		if [ ! -d "$file" ]; then
-
 			mv $file ${new_name%%.*}-0$count.${file##*.}
 			let count=count+1
-
 		fi
-
 	done
 
 }
 
 
-
 # ================================================
+
+
 
 # new variable for test_run function
 other_name=$2
@@ -112,9 +95,7 @@ test_run() {
 			echo -e "$file > ${other_name%%.*}-0$count.${file##*.}"
 			echo -e "$thin_border"
 			let count=count+1
-
 		fi
-
 	done
 
 	echo -e "\n"
