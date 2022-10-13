@@ -1,26 +1,19 @@
-# Path to your oh-my-zsh installation.
 export ZSH="/home/$USER/.oh-my-zsh"
 
-ZSH_THEME="intheloop"
+ZSH_THEME="sonicradish"
 
 
-
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
-
-alias python='python3'
-alias yt='youtube-dl'
-alias ytmp3='youtube-dl --extract-audio --audio-format mp3'
+alias yt='yt-dlp'
+alias ytmp3='yt-dlp --extract-audio --audio-format mp3'
 
 alias conf='vim ~/.zshrc'
 alias install='sudo apt install -y'
-alias search='apt search'
+alias search='dnf search -C'
 alias backups='sudo timeshift-gtk'
-
 alias gs='git status'
 alias gc='git commit'
 alias gp='git push'
@@ -29,14 +22,16 @@ alias gr='git rm'
 alias gd='git diff'
 alias gl='git log'
 alias netstat='sudo netstat'
-alias tools='sel=$(ls ~/linux_files/scripts | fzf) && vim ~/linux_files/scripts/$sel'
-alias 2up='sudo apt update && apt list --upgradable'
 alias music='mpv --no-video'
+alias mpv='mpv --profile=720p'
 alias fs='flatpak search'
 alias fii='flatpak install -y'
 alias fr='flatpak remove -y'
 
+alias open='xdg-open'
+alias 2up='sudo dnf check-update'
+
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-        source /etc/profile.d/vte-2.91.sh
+        source /etc/profile.d/vte.sh
 fi
 
