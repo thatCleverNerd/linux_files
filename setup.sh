@@ -22,8 +22,7 @@ echo "$border"
 echo -e "\t INSTALLING APPLICATIONS"
 echo "$border"
 
-sudo apt install git timeshift vim feh fzf youtube-dl curl htop pdfsam atril python3 speedtest-cli zsh com.github.phase1geo.annotator -y
-
+sudo apt install git timeshift vim feh fzf yt-dlp curl htop pdfsam atril python3 speedtest-cli zsh com.github.phase1geo.annotator -y
 
 echo "$border"
 echo -e "\t SETTING UP SYMLINKS"

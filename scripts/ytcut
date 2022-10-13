@@ -87,11 +87,11 @@ if [[ -z $url || -z $start_of_clip || -z $end_of_clip ]]; then
 
 elif [ -z "$vid_name" ]; then
 
-	ffmpeg -ss $start_of_clip -to $end_of_clip -i "$(youtube-dl -f best -g $url)" output.mp4
+	ffmpeg -ss $start_of_clip -to $end_of_clip -i "$(yt-dlp -f best -g $url)" output.mp4
 
 else
 
-	ffmpeg -ss $start_of_clip -to $end_of_clip -i "$(youtube-dl -f best -g $url)" $vid_name
+	ffmpeg -ss $start_of_clip -to $end_of_clip -i "$(yt-dlp -f best -g $url)" $vid_name
 
 fi
 
