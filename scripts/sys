@@ -13,9 +13,7 @@ if [ -z $1 ]; then
 	echo -e "$thin_border \n
  -a : Creates a system snapshot and checks for updates
  -u : Update system
- -b : Creates a snapshot
- -e : Encrypt file
- -d : Decrypt file \n\n"
+ -b : Creates a snapshot"
 
 	exit
 
@@ -53,7 +51,7 @@ update() {
 
 
 
-optstring=":d:abue:"
+optstring=":abu"
 
 while getopts ${optstring} option; do
 	case ${option} in
@@ -73,12 +71,6 @@ while getopts ${optstring} option; do
 		u)
 			clear
 			update
-			;;
-		e)
-			gpg -c $2
-			;;
-		d)
-			gpg $2
 			;;
 		:)
 			echo -e "\n [!] Error: -${OPTARG} requires an argument \n"
