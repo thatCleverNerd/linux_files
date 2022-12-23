@@ -24,7 +24,7 @@ echo "$border"
 
 sudo apt install git timeshift vim feh fzf yt-dlp curl htop pdfsam atril python3 speedtest-cli zsh -y
 
-flatpak install flathub com.bitwarden.desktop -y
+flatpak install flathub trilium com.bitwarden.desktop -y
 
 echo "$border"
 echo -e "\t SETTING UP SYMLINKS"
