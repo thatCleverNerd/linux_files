@@ -11,7 +11,7 @@ echo "$border"
 echo -e "\t UPGRADING SYSTEM"
 echo "$border"
 
-#sudo apt update && sudo apt upgrade -y
+sudo apt update && sudo apt upgrade -y
 
 
 echo -e '\n\n\n'
@@ -22,7 +22,7 @@ echo "$border"
 echo -e "\t INSTALLING APPLICATIONS"
 echo "$border"
 
-sudo apt install git timeshift vim feh fzf yt-dlp curl htop pdfsam atril python3 speedtest-cli zsh -y
+sudo apt install trilix git timeshift vim feh fzf yt-dlp curl htop pdfsam atril python3 speedtest-cli zsh -y
 
 flatpak install flathub trilium com.bitwarden.desktop -y
 

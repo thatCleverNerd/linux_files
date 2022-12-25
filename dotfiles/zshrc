@@ -12,7 +12,7 @@ alias ytmp3='yt-dlp --extract-audio --audio-format mp3'
 
 alias conf='vim ~/.zshrc'
 alias install='sudo apt install -y'
-alias search='dnf search -C'
+alias search='apt seatch'
 alias backups='sudo timeshift-gtk'
 alias gs='git status'
 alias gc='git commit'
@@ -30,7 +30,7 @@ alias fii='flatpak install -y'
 alias fr='flatpak remove -y'
 
 alias open='xdg-open'
-alias 2up='sudo dnf check-update'
+alias 2up='sudo apt update && apt list --upgradable'
 
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
         source /etc/profile.d/vte.sh
