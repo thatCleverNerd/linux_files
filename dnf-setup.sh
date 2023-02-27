@@ -43,9 +43,9 @@ echo "$border"
 echo -e "\t INSTALLING APPLICATIONS"
 echo -e "$border\n\n"
 
-sudo dnf install tilix git timeshift vim feh fzf yt-dlp curl htop atril python3 speedtest-cli -y
+sudo dnf install tilix git timeshift vim feh fzf yt-dlp curl htop python3 speedtest-cli -y
 
-flatpak install flathub trilium com.bitwarden.desktop -y
+flatpak install flathub com.bitwarden.desktop -y
 
 
 
