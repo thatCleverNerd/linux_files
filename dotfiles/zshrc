@@ -1,6 +1,6 @@
 export ZSH="/home/$USER/.oh-my-zsh"
 
-ZSH_THEME="sonicradish"
+ZSH_THEME="nanotech"
 
 
 plugins=(git zsh-autosuggestions)
@@ -33,7 +33,3 @@ alias open='xdg-open'
 alias 2up='sudo apt update && apt list --upgradable'
 
 
-
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-        source /etc/profile.d/vte.sh
-fi

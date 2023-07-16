@@ -7,13 +7,14 @@ thin_border="--------------------------------------------------"
 clear
 
 
-echo "$border"
+echo -e "\n\n$border"
 echo -e "\t UPDATING REPOs..."
 echo -e "$border\n\n"
+
 sudo apt update
 
 
-echo "$border"
+echo -e "\n\n$border"
 echo -e "\t SETTING UP ZSH"
 echo -e "$border\n\n"
 
@@ -30,36 +31,39 @@ echo -e "\n[+] Plugins have been setup \n\n"
 
 
 
-echo "$border"
+echo -e "\n\n$border"
 echo -e "\t UPGRADING SYSTEM"
 echo -e "$border\n\n"
 
 sudo apt upgrade -y
 
 
-echo -e '\n\n\n'
+echo -e "\n\n\n"
 echo -e "$thin_border"
 
 
-echo "$border"
+echo -e "\n\n$border"
 echo -e "\t INSTALLING APPLICATIONS"
 echo -e "$border\n\n"
 
-sudo apt install tilix git timeshift vim feh fzf yt-dlp curl htop python3 speedtest-cli -y
+sudo apt install tilix git vim feh fzf yt-dlp curl htop python3 speedtest-cli -y
 
 flatpak install flathub com.bitwarden.desktop -y
 
 
 
-echo "$border"
+echo -e "\n\n$border"
 echo -e "\t SETTING UP SYMLINKS"
 echo -e "$border\n\n"
+
 
 ln -s ~/linux_files/dotfiles/vimrc ~/.vimrc
 echo -e "\n [+] vimrc symlnk created"
 
+
 sudo ln -s ~/linux_files/scripts/* /bin
 echo -e "\n [+] All script symlnks created \n\n"
+
 
 
 # checks if mpv folder exists
@@ -71,14 +75,14 @@ if [[ -d $mpvPath ]]; then
 	echo -e "\n\n [+] mpv.config symlink created \n"
 
 else
-	echo -e "\n\n [+] Creating mpv directory \n"
+	echo -e "\n\n ... Creating mpv directory ...\n"
 	mkdir $mpvPath
 	ln -s ~/linux_files/dotfiles/mpv.conf ~/.config/mpv/
 	echo -e "\n\n [+] mpv.config symlink created \n"
 fi
 
 
-echo -e "\n Done :) (Dont't forget to reboot!) \n\n"
+echo -e "\n\n Done :) (Dont't forget to reboot!) \n\n"
 
 check_reboot
 
