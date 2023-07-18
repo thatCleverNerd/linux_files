@@ -48,7 +48,7 @@ echo -e "$border\n\n"
 
 sudo apt install tilix git vim feh fzf yt-dlp curl htop python3 speedtest-cli -y
 
-flatpak install flathub com.bitwarden.desktop -y
+flatpak install flathub com.bitwarden.desktop net.agalwood.Motrix -y
 
 
 
