@@ -14,6 +14,19 @@ echo -e "$border\n\n"
 sudo apt update
 
 
+
+
+echo -e "\n\n$border"
+echo -e "\t Installing Auto-Cpufreq"
+echo -e "$border\n\n"
+
+git clone https://github.com/AdnanHodzic/auto-cpufreq.git
+cd auto-cpufreq && sudo ./auto-cpufreq-installer
+sudo auto-cpufreq --install
+
+echo -e "\n\n[+] Auto-Cpufreq Installed! \n\n"
+
+
 echo -e "\n\n$border"
 echo -e "\t SETTING UP ZSH"
 echo -e "$border\n\n"
