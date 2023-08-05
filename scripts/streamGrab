@@ -1,0 +1,13 @@
+#!/bin/bash
+
+
+
+if [ $1 -z ]; then
+	clear
+	echo -e "\n[!] No Link Was Provided\n\n Ex: screenGrab 'My Link' \n\n"
+
+
+else
+	ffmpeg -i "$1" -c copy -bsf:a aac_adtstoasc ~/Downloads/streamGrab/output.mp4
+
+fi

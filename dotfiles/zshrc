@@ -32,4 +32,8 @@ alias fr='flatpak remove -y'
 alias open='xdg-open'
 alias 2up='sudo apt update && apt list --upgradable'
 
+alias todo='vim ~/.todo.txt'
+
+
+
 
