@@ -1,6 +1,6 @@
 export ZSH="/home/$USER/.oh-my-zsh"
 
-ZSH_THEME="nanotech"
+ZSH_THEME="af-magic"
 
 
 plugins=(git zsh-autosuggestions)
@@ -37,3 +37,5 @@ alias todo='vim ~/.todo.txt'
 
 
 
+
+export PATH=$PATH:/home/izuku/.spicetify

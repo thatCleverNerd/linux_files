@@ -1,6 +1,6 @@
 #!/bin/bash
 
-border="========================================="
+border="=================================================="
 thin_border="------------------------------------------------"
 
 
@@ -22,7 +22,7 @@ fi
 check_root() {
 
 	if [ "$EUID" != 0 ]; then
-		echo -e "\n [!] Run as root \n\n"
+		echo -e "\n\n [!] Run as root \n\n"
 		exit
 	fi
 
@@ -42,10 +42,17 @@ backup() {
 update() {
 
 	echo -e "\n\n$border"
-	echo -e "\t Updating..."
+	echo -e "\t Updating Repos..."
 	echo -e "$border \n\n"
 
 	sudo apt update && sudo apt upgrade -y
+
+	echo -e "\n\n$border"
+	echo -e "\t Updating Flatpak Packages..."
+	echo -e "$border \n\n"
+
+	flatpak update -y
+
 	/bin/check_reboot
 }
 
