@@ -6,14 +6,14 @@ thin_border="--------------------------------------------------"
 
 clear
 
-=======================================================================================
+#=======================================================================================
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 sudo chown root:$USER /etc/dnf/dnf.conf
 sudo chmod 664 /etc/dnf/dnf.conf
 echo -e "\nmax_parallel_downloads=10\nfastestmirror=True" >> /etc/dnf/dnf.conf
 
-=======================================================================================
+#=======================================================================================
 
 
 echo "$border"
