@@ -14,8 +14,11 @@ echo -e "$border"
 echo -e "\t Python Server"
 echo -e "$border \n"
 
+dir="pwd"
+command=$($dir)
+echo -e "\n## CURRENT DIRECTORY: $command"
 
-echo -e "[*] IP: $(ip a | grep 192 | awk '{print $2}') \n\n"
+echo -e "\n\n[*] IP: $(ip a | grep 192 | awk '{print $2}') \n\n"
 
 
 python3 -m http.server
