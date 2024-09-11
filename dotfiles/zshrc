@@ -10,7 +10,7 @@ source $ZSH/oh-my-zsh.sh
 alias yt='yt-dlp'
 alias ytmp3='yt-dlp --extract-audio --audio-format mp3'
 
-alias config='vim ~/.zshrc'
+alias conf='vim ~/.zshrc'
 alias install='sudo apt install -y'
 alias search='apt seatch'
 alias backups='sudo timeshift-gtk'
@@ -35,3 +35,4 @@ alias todo='vim ~/.todo.txt'
 
 
  
+
