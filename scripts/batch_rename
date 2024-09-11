@@ -1,11 +1,10 @@
 #!/bin/bash
 
 
-border="================================================="
-thin_border="------------------------------------------------"
+border="######################################################"
 
 
-
+################### HELP INFO ########################
 
 help(){
 
@@ -13,17 +12,20 @@ help(){
 
 	echo -e "$border\n"
 
-	echo -e " Usage: $script_name [new_name] \n"
-	echo -e " Example: $script_name my file \n" 
-	echo -e " Result: my-file-01.txt"
+	echo -e "A simple script to rename multiple files. I use this
+simple script to rename multiple photographs: \n\n"
 
-	echo -e "\n$thin_border\n"
+	echo -e " Usage: $script_name 'new-file-name-' \n"
+	echo -e " Example: $script_name 'my-photo-' \n"
+	echo -e " Result: old-file-name.png > my-photo-1.png"
+	echo -e "\t old-file-name.png > my-photo-2.png \n\n"
+	#######
+	echo -e "\n$border\n"
 	echo -e " Optional: \n"
-	echo -e " -n: Shows you the output without altering file names \n\n"
+	echo -e " -n: Shows you the output without altering file names \n\n\n\n"
 
 }
-# =============================================
-
+######################################################
 
 new_name=$1
 
