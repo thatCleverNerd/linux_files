@@ -12,13 +12,13 @@ help(){
 
 	echo -e "$border\n"
 
-	echo -e "A simple script to rename multiple files. I use this
-simple script to rename multiple photographs: \n\n"
+	echo -e " A simple script to rename multiple files. I use this script 
+ to rename my photographs: \n\n"
 
-	echo -e " Usage: $script_name 'new-file-name-' \n"
-	echo -e " Example: $script_name 'my-photo-' \n"
-	echo -e " Result: old-file-name.png > my-photo-1.png"
-	echo -e "\t old-file-name.png > my-photo-2.png \n\n"
+	echo -e " Usage: $script_name new-file-name- \n"
+	echo -e " Example: $script_name Beachday-2024- \n"
+	echo -e " Result: old-file-name.png > Beachday-2024-1.png"
+	echo -e "\t old-file-name.png > Beachday-2024-2.png \n\n"
 	#######
 	echo -e "\n$border\n"
 	echo -e " Optional: \n"

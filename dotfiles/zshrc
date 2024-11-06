@@ -25,6 +25,7 @@ alias netstat='sudo netstat'
 alias music='mpv --no-video'
 alias tools='sel=$(ls ~/linux_files/scripts | fzf) && vim ~/linux_files/scripts/$sel'
 alias mpv='mpv --profile=720p'
+alias fs='flatpak search'
 alias fii='flatpak install -y'
 alias fr='flatpak remove -y'
 
