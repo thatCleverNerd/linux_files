@@ -1,0 +1,43 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+	clear
+	echo -e '\n[!] Script requires a YouTube URL \n'
+	echo -e 'Ex: mp3rip [URL] \n\n'
+	exit
+fi
+
+clear
+
+echo -e '\n\n'
+
+
+#=== YT-DLP CHECK =====
+link="https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp_linux"
+
+if ! command -v yt-dlp &> /dev/null; then
+
+	echo "[!] Yt-dlp Not Installed..."
+	echo -e "\n[*] Fetching File FROM: \n\n$link \n\n"
+	cd ~/
+
+	wget $link -O yt-dlp
+	chmod +x yt-dlp
+
+	echo -e "\n [!] Moving yt-dlp to /bin \n\n"
+	sudo mv yt-dlp /bin
+
+	echo -e "\n [+] Yt-dlp Installed :) Continuing Download...\n\n
+
+else
+	echo -e "######################## DOWNLOADING TRACK ######################### \n\n"
+
+fi
+
+yt-dlp -o '%(title)s.%(ext)s' --embed-thumbnail -x --audio-format mp3 "$1"
+
+
+echo -e "\n\n DONE! :) \n\n"
+
+
+

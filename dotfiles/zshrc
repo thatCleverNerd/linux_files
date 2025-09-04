@@ -7,11 +7,7 @@ plugins=(git zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
-alias yt='yt-dlp'
-alias ytmp3='yt-dlp --extract-audio --audio-format mp3'
-
 alias conf='vim ~/.zshrc'
-alias install='sudo apt install -y'
 alias search='apt seatch'
 alias backups='sudo timeshift-gtk'
 alias gs='git status'
@@ -22,18 +18,20 @@ alias gr='git rm'
 alias gd='git diff'
 alias gl='git log'
 alias netstat='sudo netstat'
-alias music='mpv --no-video'
-alias tools='sel=$(ls ~/linux_files/scripts | fzf) && vim ~/linux_files/scripts/$sel'
 alias mpv='mpv --profile=720p'
 alias fs='flatpak search'
 alias fii='flatpak install -y'
 alias fr='flatpak remove -y'
 
 alias open='xdg-open'
-alias 2up='sudo apt update && apt list --upgradable'
 
-alias todo='vim ~/.todo.txt'
 
 
  
 
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/deck/.lmstudio/bin"
+
+# Created by `pipx` on 2025-08-31 23:52:34
+export PATH="$PATH:/home/deck/.local/bin"
