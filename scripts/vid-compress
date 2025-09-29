@@ -1,0 +1,28 @@
+#!/bin/bash
+
+clear
+
+echo -e "\n\n VIDEO COMPRESSION WITH FFMPEG \n\n"
+
+
+if [[ -z $1 || -z $2 ]]; then
+echo -e "[!] Script requires 2 arguments\n"
+echo -e " Ex: ./vid-compress VIDEO-FILE.mp4  OUTPUT-FILE-NAME\n\n"
+echo -e "\nOptional: Arg. 3 : CRF Value for video encoding (Video Quality) | EX: ./vid-compress VIDEO-FILE.mp4  OUTPUT-FILE-NAME 30"
+echo -e "\n\n\n Default CRF Value = 26"
+echo -e "\n 0: Lossless quality (highest file size)\n 23-28 Medium quality (Smaller file size)\n 28-50 Lower quality (Situations where size is critical)\n\n\n"
+
+else
+	# Continued
+	if [[ -z $3 ]]; then
+	ffmpeg -i "$1"  -c:v libx264 -crf 26 -c:a aac -b:a 128k -y "$2.mp4"
+
+	else
+	ffmpeg -i "$1"  -c:v libx264 -crf $3 -c:a aac -b:a 128k -y "$2.mp4"
+
+	fi
+
+
+fi
+
+
