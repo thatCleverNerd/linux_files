@@ -15,7 +15,7 @@ fi
 
 count=0
 
-printf "\n \e[1;33m [?] Searching for files..."
+printf "\n \e[1;33m [?] Searching for files in ~/Music ..."
 
 # Simple dot animation
 for i in {1..5}; do
@@ -41,4 +41,4 @@ for file in "$music_dir"/*.{mp3,m4a}; do
 done
 
 echo -e "\e[0m"
-echo -e "\n\n[+] Done! Found \e[32m$count\e[0m files without album art \n\n\n"
+echo -e "\n\n  [+] Done! Found \e[32m$count\e[0m files without album art \n\n\n"
