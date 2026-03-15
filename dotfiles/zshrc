@@ -35,3 +35,5 @@ export PATH="$PATH:/home/deck/.lmstudio/bin"
 
 # Created by `pipx` on 2025-08-31 23:52:34
 export PATH="$PATH:/home/deck/.local/bin"
+alias protontricks='flatpak run com.github.Matoking.protontricks'
+alias protontricks-launch='flatpak run --command=protontricks-launch com.github.Matoking.protontricks'
