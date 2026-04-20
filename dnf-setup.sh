@@ -43,9 +43,15 @@ echo "$border"
 echo -e "\t INSTALLING APPLICATIONS"
 echo -e "$border\n\n"
 
-sudo dnf install tilix git timeshift vim feh fzf yt-dlp curl htop python3 speedtest-cli -y
+sudo dnf install tilix git timeshift vim yt-dlp curl htop python3 speedtest-cli -y
 
-flatpak install flathub com.bitwarden.desktop net.agalwood.Motrix -y
+flatpak install flathub com.bitwarden.desktop net.agalwood.Motrix io.github.input_leap.input-leap -y
+
+echo "$border"
+echo -e "\t FLATPAK UPDATE"
+echo -e "$border\n\n"
+
+flatpak update -y
 
 
 
@@ -58,29 +64,6 @@ echo -e "\n [+] vimrc symlnk created"
 
 sudo ln -s ~/linux_files/scripts/* /bin
 echo -e "\n [+] All script symlnks created \n\n"
-
-
-# checks if mpv folder exists
-
-mpvPath="/home/$USER/.config/mpv"
-
-if [[ -d $mpvPath ]]; then
-	ln -s ~/linux_files/dotfiles/mpv.conf ~/.config/mpv/
-	echo -e "\n\n [+] mpv.config symlink created \n"
-
-else
-	echo -e "\n\n [+] Creating mpv directory \n"
-	mkdir $mpvPath
-	ln -s ~/linux_files/dotfiles/mpv.conf ~/.config/mpv/
-	echo -e "\n\n [+] mpv.config symlink created \n"
-fi
-
-
-echo "$border"
-echo -e "\t FLATPAK UPDATE"
-echo -e "$border\n\n"
-
-flatpak update -y
 
 
 echo -e "\n Done :) (Dont't forget to reboot!) \n\n"
