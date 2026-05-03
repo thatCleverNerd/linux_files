@@ -17,6 +17,11 @@ alias ga='git add'
 alias gr='git rm'
 alias gd='git diff'
 alias gl='git log'
+alias netstat='sudo netstat'
+alias mpv='mpv --profile=720p'
+alias fs='flatpak search'
+alias fii='flatpak install -y'
+alias fr='flatpak remove -y'
 
 alias open='xdg-open'
 
