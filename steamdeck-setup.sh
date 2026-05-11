@@ -9,7 +9,7 @@ dir="/home/deck/linux_files/scripts"
 
 count=0
 
-echo -e "\n\n\n"
+echo -e "\n\n\n\n=================== SETTING UP SYMLINKS ======================\n"
 
 for file in "$dir"/*; do
 	if [ -f "$file" ]; then
@@ -20,9 +20,16 @@ for file in "$dir"/*; do
 	fi
 done
 
+echo -e "\n================= All script symlnks created =================\n\n\n\n"
 
 
-echo -e "\n [+] All script symlnks created \n\n"
 
+
+echo -e "\n\n================= INSTALLING FLATPAKS =================\n\n"
 
 flatpak install flathub net.agalwood.Motrix be.alexandervanhee.gradia com.brave.Browser com.valvesoftware.Steam.Utility.protontricks.Locale io.github.input_leap.input-leap net.davidotek.pupgui2 net.lutris.Lutris org.musicbrainz.Picard org.onlyoffice.desktopeditors org.remmina.Remmina org.strawberrymusicplayer.strawberry -y
+
+
+
+echo -e "\n\n================= DONE! =================\n\n\n\n"
+
