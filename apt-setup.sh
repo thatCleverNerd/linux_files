@@ -8,7 +8,7 @@ clear
 
 #============================================================
 
-echo "$border"
+echo -e "\n\n$border"
 echo -e "\t UPDATING SYSTEM..."
 echo -e "$border\n\n"
 
@@ -16,7 +16,7 @@ sudo apt update -y
 
 #============================================================
 
-echo "$border"
+echo -e "\n\n$border"
 echo -e "\t SETTING UP ZSH"
 echo -e "$border\n\n"
 
@@ -36,7 +36,7 @@ echo -e "\n[+] Plugins have been setup \n\n"
 #============================================================
 
 
-echo "$border"
+echo -e "\n\n$border"
 echo -e "\t INSTALLING APPLICATIONS"
 echo -e "$border\n\n"
 
@@ -44,14 +44,14 @@ sudo apt install vim tilix timeshift yt-dlp speedtest-cli -y
 
 #============================================================
 
-echo "$border"
+echo -e "\n\n$border"
 echo -e "\t INSTALLING FLATPAKS"
 echo -e "$border\n\n"
 
 flatpak install flathub net.agalwood.Motrix io.github.input_leap.input-leap -y
 
 
-echo "$border"
+echo -e "\n\n$border"
 echo -e "\t FLATPAK UPDATE"
 echo -e "$border\n\n"
 
@@ -63,7 +63,7 @@ dir="/home/$USER/linux_files/scripts"
 
 count=0
 
-echo "$border"
+echo -e "\n\n$border"
 echo -e "\t SETTING UP SYMLINKS"
 echo -e "$border\n\n"
 
@@ -77,7 +77,7 @@ for file in "$dir"/*; do
 done
 
 
-echo "$border"
+echo -e "\n\n$border"
 echo -e "\t All Script Symlinks Created!"
 echo -e "$border\n\n"
 
