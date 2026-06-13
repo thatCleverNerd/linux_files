@@ -8,6 +8,7 @@ plugins=(git zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
 
 alias conf='vim ~/.zshrc'
+
 alias gs='git status'
 alias gc='git commit'
 alias gp='git push'
@@ -16,17 +17,10 @@ alias gr='git rm'
 alias gd='git diff'
 alias gl='git log'
 
+alias restart-kde='killall kdeconnectd; kdeconnectd'
+
 alias open='xdg-open'
 
 
-
- 
-
-
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/home/deck/.lmstudio/bin"
-
-# Created by `pipx` on 2025-08-31 23:52:34
-export PATH="$PATH:/home/deck/.local/bin"
 alias protontricks='flatpak run com.github.Matoking.protontricks'
 alias protontricks-launch='flatpak run --command=protontricks-launch com.github.Matoking.protontricks'
