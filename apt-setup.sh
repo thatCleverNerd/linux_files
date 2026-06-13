@@ -82,5 +82,5 @@ echo -e "\t All Script Symlinks Created!"
 echo -e "$border\n\n"
 
 
-echo -e
+echo -e "\n\n Done! :) \n\n"
 
