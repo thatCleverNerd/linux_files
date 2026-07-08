@@ -45,17 +45,19 @@ sudo apt install vim tilix timeshift yt-dlp speedtest-cli -y
 #============================================================
 
 echo -e "\n\n$border"
+echo -e "\t FLATPAK UPDATE"
+echo -e "$border\n\n"
+
+flatpak update -y
+
+
+
+echo -e "\n\n$border"
 echo -e "\t INSTALLING FLATPAKS"
 echo -e "$border\n\n"
 
 flatpak install flathub net.agalwood.Motrix io.github.input_leap.input-leap -y
 
-
-echo -e "\n\n$border"
-echo -e "\t FLATPAK UPDATE"
-echo -e "$border\n\n"
-
-flatpak update -y
 
 #============================================================
 
@@ -73,6 +75,7 @@ for file in "$dir"/*; do
 		sudo ln -sf "$file" /bin/
 		echo "[+] Created symlink for: $(basename "$file")"
 		((count++))
+
 	fi
 done
 
