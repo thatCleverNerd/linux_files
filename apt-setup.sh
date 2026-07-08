@@ -1,7 +1,6 @@
 #!/bin/bash
 
 border='===================================================='
-thin_border="--------------------------------------------------"
 
 clear
 
@@ -26,11 +25,13 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 
 rm ~/.zshrc
 
-ln -s ~/linux_files/dotfiles/zshrc ~/.zshrc && echo -e "\n[+] zshrc symlink created \n\n"
+ln -s ~/linux_files/dotfiles/zshrc ~/.zshrc
+
+echo -e "\n[+] zshrc symlink created \n\n"
 
 
 echo -e "[*] downloading zsh plugins \n\n" && git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/plugins/zsh-autosuggestions
-echo -e "\n[+] Plugins have been setup \n\n"
+echo -e "[+] Plugins have been setup \n\n"
 
 
 #============================================================
