@@ -33,7 +33,7 @@ fi
 
 echo -e "######################## DOWNLOADING TRACK ######################### \n\n"
 
-yt-dlp -o '%(title)s.%(ext)s' -x --audio-format mp3 --audio-quality 320k "$1"
+yt-dlp -o '%(title)s.%(ext)s' -x --audio-format mp3 "$1"
 
 
 echo -e "\n\n DONE! :) \n\n"
