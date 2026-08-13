@@ -8,7 +8,7 @@ clear
 #============================================================
 
 echo -e "\n\n$border"
-echo -e "\t UPDATING SYSTEM..."
+echo -e "\t UPDATING REPOS..."
 echo -e "$border\n\n"
 
 sudo apt update -y
@@ -84,6 +84,15 @@ done
 echo -e "\n\n$border"
 echo -e "\t All Script Symlinks Created!"
 echo -e "$border\n\n"
+
+
+#============================================================
+
+echo -e "\n\n$border"
+echo -e "\t UPGRADING SYSTEM..."
+echo -e "$border\n\n"
+
+sudo apt upgrade -y
 
 
 echo -e "\n\n Done! :) \n\n"
