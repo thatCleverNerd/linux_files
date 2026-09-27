@@ -30,7 +30,7 @@ ln -s ~/linux_files/dotfiles/zshrc ~/.zshrc
 echo -e "\n[+] zshrc symlink created \n\n"
 
 
-echo -e "[*] downloading zsh plugins \n\n" && git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/plugins/zsh-autosuggestions
+echo -e "[*] downloading zsh plugins \n\n" && git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 echo -e "[+] Plugins have been setup \n\n"
 
 
