@@ -19,13 +19,12 @@ if ! command -v yt-dlp &> /dev/null; then
 
 	echo "[!] Yt-dlp Not Installed..."
 	echo -e "\n[*] Fetching File FROM: \n\n$link \n\n"
-	cd ~/
 
 	wget $link -O yt-dlp
 	chmod +x yt-dlp
 
-	echo -e "\n [!] Moving yt-dlp to /bin \n\n"
-	sudo mv yt-dlp /bin
+	echo -e "\n [!] Moving yt-dlp to ~/.local/bin \n\n"
+	mv yt-dlp ~/.local/bin
 
 	echo -e "\n [+] Yt-dlp Installed :) Continuing Download...\n\n"
 
